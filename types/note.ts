@@ -4,5 +4,5 @@ export interface Note {
   content: string;
   tag: "Work" | "Personal" | "Meeting" | "Shopping" | "Todo";
   createdAt: string;
-  updateAt: string;
+  updatedAt: string;
 }

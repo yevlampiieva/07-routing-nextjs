@@ -12,7 +12,11 @@ interface newNote {
   tag: "Work" | "Personal" | "Meeting" | "Shopping" | "Todo";
 }
 
-export const fetchNotes = async (query: string, page: number): Promise<fetchNotesResponse> => {
+export const fetchNotes = async (
+  query: string,
+  page: number,
+  tag?: string
+): Promise<fetchNotesResponse> => {
   const response = await axios.get<fetchNotesResponse>(
     `https://notehub-public.goit.study/api/notes`,
     {
@@ -20,6 +24,7 @@ export const fetchNotes = async (query: string, page: number): Promise<fetchNote
         search: query,
         page,
         perPage: 12,
+        tag,
       },
       headers: {
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_NOTEHUB_TOKEN}`,

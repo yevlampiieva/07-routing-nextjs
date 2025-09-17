@@ -34,7 +34,7 @@ export default function NoteList({ items }: NoteListProps) {
             <p className={css.content}>{item.content}</p>
             <div className={css.footer}>
               <span className={css.tag}>{item.tag}</span>
-              <Link href={`/notes/${item.id}`} className={css.button}>
+              <Link href={`/notes/${item.id}`} className={css.button} scroll={false}>
                 View details
               </Link>
               <button onClick={() => mutate(item.id)} className={css.button}>
